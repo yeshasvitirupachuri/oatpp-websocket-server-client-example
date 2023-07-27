@@ -10,10 +10,7 @@ This repo contains refectored c++ examples of server and client without using de
 
 ### Dependencies Installation
 
-- [oatpp release 1.3.0](https://github.com/oatpp/oatpp/releases/tag/1.3.0)
-- [oatpp-websocket release 1.3.0](https://github.com/oatpp/oatpp-websocket/releases/tag/1.3.0)
-
-###### oatpp
+#### [oatpp release 1.3.0](https://github.com/oatpp/oatpp/releases/tag/1.3.0)
 
 ```
 git clone https://github.com/oatpp/oatpp
@@ -25,7 +22,7 @@ make all
 make install
 ```
 
-###### oatpp-websocket
+#### [oatpp-websocket release 1.3.0](https://github.com/oatpp/oatpp-websocket/releases/tag/1.3.0)
 
 ```
 git clone https://github.com/oatpp/oatpp-websockete
