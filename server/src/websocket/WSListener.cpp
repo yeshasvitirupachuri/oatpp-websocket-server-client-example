@@ -1,20 +1,22 @@
 
 #include "WSListener.hpp"
 
+#include <string>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // WSListener
 
 void WSListener::onPing(const WebSocket& socket, const oatpp::String& message) {
-  OATPP_LOGD(TAG, "onPing");
+  OATPP_LOGD(TAG, " onPing");
   socket.sendPong(message);
 }
 
 void WSListener::onPong(const WebSocket& socket, const oatpp::String& message) {
-  OATPP_LOGD(TAG, "onPong");
+  OATPP_LOGD(TAG, " onPong");
 }
 
 void WSListener::onClose(const WebSocket& socket, v_uint16 code, const oatpp::String& message) {
-  OATPP_LOGD(TAG, "onClose code=%d", code);
+  OATPP_LOGD(TAG, " onClose code=%d", code);
 }
 
 void WSListener::readMessage(const WebSocket& socket, v_uint8 opcode, p_char8 data, oatpp::v_io_size size) {
@@ -24,10 +26,14 @@ void WSListener::readMessage(const WebSocket& socket, v_uint8 opcode, p_char8 da
     auto wholeMessage = m_messageBuffer.toString();
     m_messageBuffer.setCurrentPosition(0);
 
-    OATPP_LOGD(TAG, "onMessage message='%s'", wholeMessage->c_str());
+    OATPP_LOGD(TAG, " readMessage [%s]", wholeMessage->c_str());
+
+    // Extract client name from incoming message
+    std::string msg = wholeMessage;
+    std::string client_name = msg.substr(0, msg.find(' '));
 
     /* Send message in reply */
-    socket.sendOneFrameText( "Hello from oatpp!: " + wholeMessage);
+    socket.sendOneFrameText( "Server sends greetings to " + client_name);
 
   } else if(size > 0) { // message frame received
     m_messageBuffer.writeSimple(data, size);

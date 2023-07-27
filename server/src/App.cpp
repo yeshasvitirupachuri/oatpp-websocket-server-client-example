@@ -26,7 +26,7 @@ void run() {
   oatpp::network::Server server(tcp_serverConnectionProvider, http_connectionHandler);
 
   // Priny info about server port
-  OATPP_LOGI("oatpp-websocket-server-example", "Server running on port %s", tcp_serverConnectionProvider->getProperty("port").getData());
+  OATPP_LOGI("oatpp-websocket-server", " Server running on port %s", tcp_serverConnectionProvider->getProperty("port").getData());
 
   // Run server
   server.run();
