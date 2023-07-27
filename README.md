@@ -6,6 +6,8 @@ that are part of oatpp Dependency Injection (DI) framework [reference](https://o
 The code structure of the examples with `_COMPONENT` macros if unclear to new users and a bit obscure about setting up the server and connection handlers using oatpp.
 This repo contains refectored c++ examples of server and client without using dependency injection framework macros components.
 
+![](./misc/server_client_example.gif)
+
 ### Dependencies Installation
 
 - [oatpp release 1.3.0](https://github.com/oatpp/oatpp/releases/tag/1.3.0)
