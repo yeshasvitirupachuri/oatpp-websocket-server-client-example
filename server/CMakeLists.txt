@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(src)
 
 add_library(${project_name}-lib
-        src/controller/MyController.hpp
+        src/controller/WsApiController.hpp
         src/websocket/WSListener.cpp
         src/websocket/WSListener.hpp
 )
