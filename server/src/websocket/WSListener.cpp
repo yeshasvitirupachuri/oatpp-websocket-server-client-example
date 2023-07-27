@@ -49,7 +49,7 @@ std::atomic<v_int32> WSInstanceListener::SOCKETS(0);
 void WSInstanceListener::onAfterCreate(const oatpp::websocket::WebSocket& socket, const std::shared_ptr<const ParameterMap>& params) {
 
   SOCKETS ++;
-  OATPP_LOGD(TAG, "New Incoming Connection. Connection count=%d", SOCKETS.load());
+  OATPP_LOGD(TAG, " New Incoming Connection. Current client connections count [%d]", SOCKETS.load());
 
   /* In this particular case we create one WSListener per each connection */
   /* Which may be redundant in many cases */
@@ -59,6 +59,6 @@ void WSInstanceListener::onAfterCreate(const oatpp::websocket::WebSocket& socket
 void WSInstanceListener::onBeforeDestroy(const oatpp::websocket::WebSocket& socket) {
 
   SOCKETS --;
-  OATPP_LOGD(TAG, "Connection closed. Connection count=%d", SOCKETS.load());
+  OATPP_LOGD(TAG, " Connection closed. Current client connections count [%d]", SOCKETS.load());
 
 }
