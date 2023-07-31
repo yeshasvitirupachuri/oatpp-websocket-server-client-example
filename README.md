@@ -26,7 +26,7 @@ make install
 
 ```
 git clone https://github.com/oatpp/oatpp-websocket
-cd oatpp
+cd oatpp-websocket
 git checkout tags/1.3.0
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=<path-to-oatpp-websocket>/build/install
