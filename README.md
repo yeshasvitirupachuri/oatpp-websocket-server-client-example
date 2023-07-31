@@ -25,7 +25,7 @@ make install
 #### [oatpp-websocket release 1.3.0](https://github.com/oatpp/oatpp-websocket/releases/tag/1.3.0)
 
 ```
-git clone https://github.com/oatpp/oatpp-websockete
+git clone https://github.com/oatpp/oatpp-websocket
 cd oatpp
 git checkout tags/1.3.0
 mkdir build && cd build
